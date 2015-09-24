@@ -9,7 +9,7 @@ It went through significant changes.
 We implemented decimal64 and decimal128.  The backend is the decNumber library from 
 http://speleotrove.com/decimal/.   See README.decnumber for build instructions. 
 
-We did not use _Decimal32/64 as the original pgDecimal, because we want to access some API in
+We did not use Decimal32/64 as the original pgDecimal, because we want to access some API in
 decDouble/Quad.  Also, decimal32 is not implemented, because it only got 7 precision digits
 which is too small to be useful.  (The real reason, is that decSingle does not implement arithmatics :-)
 
@@ -32,6 +32,7 @@ This alone, could be the reason to use INTEL BID lib when possilbe.  Will invest
 Usage Example
 =============
 
+```
 ftian=# set vitesse.enable = 0;
 SET
 ftian=# \timing
@@ -192,4 +193,4 @@ ftian=# select count(*) from tt t1, tt t2 where t1.ii < 10000 and t2.ii < 10000 
 (1 row)
 
 Time: 60443.629 ms
-
+```

@@ -1,0 +1,49 @@
+Backend
+=======
+
+There are two well-known decimal libraries, the decNumber we used here, and one from Intel. 
+I picked decnumber because GCC picked it, more portable (not limited to Intel).  
+Question: How about Intel ADX?  Does it help?  Does decNumber generate ADX code?
+
+See http://speleotrove.com/decimal/dpintro.html for performance comparison.  Overall, decnumber 
+and Intel number are very close, and decimal64/128 are many times faster than an arbitrary 
+precision implementation.   I did not compare decNumber against numeric of postgres, but I trust
+both are high quality implementations and assume performance wise they are similar.
+
+INTEL library has conversion functions for decimal64/128 from/to int32/64, float/double.  This
+native implementations could be much faster than the conversion we implemented -- print to 
+string and parse.  
+
+DecNumber Build Instructions
+===============================
+
+The backend we used to implement decimal floating point is taken from 
+http://speleotrove.com/decimal/.  This site contains a huge collection of information on
+IEEE 754 decimal floating point format and arithmatics.
+
+After downloading, one need to build decnumber library. The following simple Makefile will do,
+
+------------- BEGIN Makefile for decNumber ---------------
+OBJS = decSingle.o decDouble.o decQuad.o decNumber.o decContext.o
+
+CFLAGS = -Wall -g -O2 -fPIC
+
+libdecnumber.a: $(OBJS)
+	ar -rcs libdecnumber.a $(OBJS)
+
+clean:
+	rm -f libdecnumber.a $(OBJS)
+
+install:
+	install -D *.h ../installed/include/decnumber 
+	install -D libdecnumber.a ../installed/lib
+------------- END Makefile for decNumber -----------------
+
+Then, you need to update the Makefile of decimal, pointing include dir and libdir to the right 
+install path of decNumber, dance the usual make, make install, create extension dance.
+
+INTEL BID Library
+=================
+
+NYI.  Next.
+

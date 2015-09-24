@@ -1,0 +1,30 @@
+{
+   "name": "pgDecimal",
+   "abstract": "Decimal32 and Decimal64 data types",
+   "version": "1.0.0",
+   "maintainer": "Pavel Stehule <pavel.stehule@gmail.com>",
+   "license": "postgresql",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
+   },
+   "prereqs": {
+      "runtime": {
+         "requires": {
+             "PostgreSQL": ">= 8.3.0, < 8.4.0"
+         }
+      }
+   },
+   "provides": {
+      "pgDecimal": {
+         "abstract": "4 and 8bytes decimal types",
+         "file": "decimal--1.0.sql",
+         "version": "1.0.0"
+      }
+   },
+   "tags": [
+      "type",
+      "numeric",
+      "fix length"
+   ]
+}

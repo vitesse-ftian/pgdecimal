@@ -1,0 +1,5 @@
+# decimal
+comment = 'decimal32 and decimal64 support'
+default_version = '1.0'
+module_pathname = '$libdir/decimal'
+relocatable = true

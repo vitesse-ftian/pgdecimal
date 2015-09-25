@@ -1,26 +1,33 @@
 {
-   "name": "pgDecimal",
+   "name": "pgDecimal2",
    "abstract": "decimal64 and decimal128 data types", 
+   "description": "decimal64/128 using IEEE decimal floating point types",
    "version": "2.0.0",
-   "maintainer": "Feng Tian <ftian@vitessedata.com>", 
-   "license": "postgresql",
-   "meta-spec": {
-      "version": "2.0.0",
-      "url": "http://pgxn.org/meta/spec.txt"
-   },
-   "prereqs": {
-      "runtime": {
-         "requires": {
-             "PostgreSQL": ">= 9.3.0" 
-         }
-      }
-   },
+   "maintainer": [
+       "Feng Tian <ftian@vitessedata.com>"
+    ], 
+   "license": {
+       "PostgresSQL": "http://www.postgresql.org/about/license"
+    }, 
    "provides": {
-      "pgDecimal": {
+      "pgDecimal2": {
          "abstract": "8 and 16 bytes IEEE decimal floating point types",
          "file": "decimal--2.0.sql",
          "version": "2.0.0"
       }
+   },
+   "resources": {
+        "homepage": "http://github.com/vitesse-ftian/pgdecimal/",
+        "repository": {
+            "url": "http://github.com/vitesse-ftian/pgdecimal.git",
+            "web": "http://github.com/vitesse-ftian/pgdecimal/",
+            "type": "git"
+        }
+   },
+   "generated_by": "Feng Tian",
+   "meta-spec": {
+      "version": "1.0.0",
+      "url": "http://pgxn.org/meta/spec.txt"
    },
    "tags": [
       "type",

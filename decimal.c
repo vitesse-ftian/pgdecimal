@@ -13,26 +13,26 @@ PG_MODULE_MAGIC;
 Datum
 Decimal64GetDatum(PGDecimal64 X)
 {
-    union
-    {
-        PGDecimal64	value;
-        int64		retval;
-    }			myunion;
+        union
+        {
+                PGDecimal64	value;
+                int64		retval;
+        }			myunion;
 
-    myunion.value = X;
-    return SET_8_BYTES(myunion.retval);
+        myunion.value = X;
+        return SET_8_BYTES(myunion.retval);
 }
 
 PGDecimal64
 DatumGetDecimal64(Datum X)
 {
-    union
-    {
-        int64		value;
-        PGDecimal64	retval;
-    }			myunion;
+        union
+        {
+                int64		value;
+                PGDecimal64	retval;
+        }			myunion;
 
-    myunion.value = GET_8_BYTES(X);
-    return myunion.retval;
+        myunion.value = GET_8_BYTES(X);
+        return myunion.retval;
 }
 

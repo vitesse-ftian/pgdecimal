@@ -626,12 +626,10 @@ CREATE CAST(decimal128 AS float8)
 WITH FUNCTION decimal128_float8(decimal128);
 
 CREATE CAST(numeric AS decimal64)
-WITH FUNCTION numeric_decimal64(numeric)
-AS IMPLICIT;
+WITH FUNCTION numeric_decimal64(numeric);
 
 CREATE CAST(numeric AS decimal128)
-WITH FUNCTION numeric_decimal128(numeric)
-AS IMPLICIT;
+WITH FUNCTION numeric_decimal128(numeric);
 
 CREATE CAST(decimal64 AS numeric)
 WITH FUNCTION decimal64_numeric(decimal64)

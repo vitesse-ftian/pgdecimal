@@ -31,6 +31,7 @@ This alone, could be the reason to use INTEL BID lib when possilbe.  Will invest
 
 Usage Example
 =============
+The following was on an Intel NUC, core i5 5252U @ 1.6GHz, 16GB memory, SSD.   Only CPU matters.
 
 ```
 ftian=# set vitesse.enable = 0;

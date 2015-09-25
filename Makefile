@@ -6,7 +6,7 @@ PG_CPPFLAGS = -I$(TOOLCHAIN_DIR)/installed/include/decnumber
 SHLIB_LINK = -L$(TOOLCHAIN_DIR)/installed/lib -ldecnumber 
 
 EXTENSION = decimal
-DATA = decimal--1.0.sql
+DATA = decimal--2.0.sql
 
 REGRESS = decimal
 
